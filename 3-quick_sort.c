@@ -40,7 +40,7 @@ left++;
 }
 }
 /* left is right place for pivot so swap left with pivot(end) */
-if (left != end)
+if (array[left] != array[end])
 {
 array[end] = array[left];
 array[left] = pivot;
