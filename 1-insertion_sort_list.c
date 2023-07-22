@@ -8,35 +8,35 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *current, *next_to_sort, *before;
+	listint_t *current, *next_to_sort, *before;
 
-if (!list || !*list || !(*list)->next)
-return;
+	if (!list || !*list || !(*list)->next)
+		return;
 
-for (current = (*list)->next; current; current = next_to_sort)
-{
-next_to_sort = current->next;
+	for (current = (*list)->next; current; current = next_to_sort)
+	{
+		next_to_sort = current->next;
 
-for (before = current->prev;
-before && current->n < before->n;
-before = current->prev)
-{
-/* swap current with before */
-/* remove current from old place */
-before->next = current->next;
-if (current->next)
-current->next->prev = before;
+		for (before = current->prev;
+			before && current->n < before->n;
+				before = current->prev)
+		{
+			/* swap current with before */
+			/* remove current from old place */
+			before->next = current->next;
+			if (current->next)
+				current->next->prev = before;
 
-/* put current in new place */
-current->prev = before->prev;
-current->next = before;
-if (current->prev)
-current->prev->next = current;
-else
-*list = current;
-before->prev = current;
+			/* put current in new place */
+			current->prev = before->prev;
+			current->next = before;
+			if (current->prev)
+				current->prev->next = current;
+			else
+				*list = current;
+			before->prev = current;
 
-print_list(*list);
-}
-}
+			print_list(*list);
+		}
+	}
 }
