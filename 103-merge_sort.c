@@ -17,38 +17,34 @@ void merge_sorted_arrays(int a[], size_t l, size_t m, size_t r)
 /* used as index/counter variables for the 3 arrays a, temp_left, temp_right*/
 size_t left_length = m - l + 1;
 size_t right_length = r - m;
-int *temp_left = malloc(sizeof(int) * left_length);
-int *temp_right = malloc(sizeof(int) * right_length);
+int *copy_a = malloc(sizeof(int) * (r - l + 1));
 size_t i, j, k;
 printf("Merging...\n");
 /*copy the left portion into the temp_left array*/
-for (i = 0; i < left_length; i++)
-temp_left[i] = a[l + i];
+for (i = l, k = 0; i <= r; i++, k++)
+copy_a[k] = a[i];
+print_array(copy_a, left_length + right_length);
 printf("[left]: ");
-print_array(temp_left, left_length);
-/*copy the right portion into the temp_right array*/
-for (i = 0; i < right_length; i++)
-temp_right[i] = a[m + 1 + i];
+print_array(copy_a, left_length);
 printf("[right]: ");
-print_array(temp_right, right_length);
-for (i = 0, j = 0, k = l; k <= r; k++)
+print_array(copy_a + left_length, right_length);
+for (i = 0, j = left_length, k = l; k <= r; k++)
 {
 if ((i < left_length) &&
-	(j >= right_length || temp_left[i] <= temp_right[j]))
+	(j >= right_length + left_length || copy_a[i] <= copy_a[j]))
 {
-	a[k] = temp_left[i];
+	a[k] = copy_a[i];
 	i++;
 }
 else
 {
-	a[k] = temp_right[j];
+	a[k] = copy_a[j];
 	j++;
 }
 }
 printf("[Done]: ");
 print_array(a + l, left_length + right_length);
-free(temp_left);
-free(temp_right);
+free(copy_a);
 }
 /**
  * merge_sort_recursion - and the right index r.
@@ -91,6 +87,7 @@ merge_sorted_arrays(a, l, m, r);
  */
 void merge_sort(int *array, size_t size)
 {
-
-merge_sort_recursion(array, 0, size - 1);
+	if (array == NULL || size < 2)
+		return;
+	merge_sort_recursion(array, 0, size - 1);
 }
