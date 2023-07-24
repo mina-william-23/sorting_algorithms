@@ -2,21 +2,6 @@
 #include <stdio.h>
 #include "sort.h"
 
-void merge_sort_recursion(int a[], size_t l, size_t r);
-void merge_sorted_arrays(int a[], size_t l, size_t m, size_t r);
-
-/**
- * merge_sort - Performs a merge sort of the array a with the given length
- * ,the function
- * @array: tha array to sort
- * @size: length of array
- */
-void merge_sort(int *array, size_t size)
-{
-
-merge_sort_recursion(array, 0, size - 1);
-}
-
 /**
  * merge_sort_recursion - and the right index r.
  * This function implements the recursive
@@ -109,4 +94,16 @@ printf("[Done]: ");
 print_array(a + l, left_length + right_length);
 free(temp_left);
 free(temp_right);
+}
+
+/**
+ * merge_sort - Performs a merge sort of the array a with the given length
+ * ,the function
+ * @array: tha array to sort
+ * @size: length of array
+ */
+void merge_sort(int *array, size_t size)
+{
+
+merge_sort_recursion(array, 0, size - 1);
 }
