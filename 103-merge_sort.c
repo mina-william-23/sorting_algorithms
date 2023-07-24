@@ -20,7 +20,6 @@ size_t right_length = r - m;
 int *temp_left = malloc(sizeof(int) * left_length);
 int *temp_right = malloc(sizeof(int) * right_length);
 size_t i, j, k;
-
 printf("Merging...\n");
 /*copy the left portion into the temp_left array*/
 for (i = 0; i < left_length; i++)
@@ -32,17 +31,6 @@ for (i = 0; i < right_length; i++)
 temp_right[i] = a[m + 1 + i];
 printf("[right]: ");
 print_array(temp_right, right_length);
-
-/*
- * Use i to move through the indexes of temp_left, j to move through the
- * indexes of temp_right, and k to move through the portion of the array
- * a from l ... r.  We basically keep checking the "head" of temp_left
- * and temp_right (knowing both arrays are sorted) and put the smaller of
- * the two into array a (using i, j, k to move through the arrays).  When
- * we run out elements in either temp_left or temp_right, the remaining
- * elements from the other array will be copied over into a.
- */
-
 for (i = 0, j = 0, k = l; k <= r; k++)
 {
 if ((i < left_length) &&
