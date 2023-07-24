@@ -1,39 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "sort.h"
-
-/**
- * merge_sort_recursion - and the right index r.
- * This function implements the recursive
- * divide-and-conquer step of the merge sort algorithm, splitting the array
- * portion between l...r at the middle, and calling itself on each portion,
- * before applying the function to merge the sorted portions of the array
- * that will result.
- * Applies the merge sort algorithm to the array a between the left index l
- * @a: the array to sort
- * @l: start index
- * @r: end index
- */
-
-void merge_sort_recursion(int a[], size_t l, size_t r)
-{
-/*we stop recursion when l >= r*/
-if (l < r)
-{
-/*find the midpoint of l and r */
-size_t m = l + (r - l) / 2;
-/* apply the function recursively to the left and right portions split */
-/*at the midpoint*/
-merge_sort_recursion(a, l, m);
-merge_sort_recursion(a, m + 1, r);
-
-/*at this point both portions of the array have been sorted, and we now*/
-/* merge the sorted portions of the array*/
-
-
-merge_sorted_arrays(a, l, m, r);
-}
-}
 /**
  * merge_sorted_arrays - merges the two sorted portions of
  * the array a between the indexes l ... m and m + 1 ... r
@@ -94,6 +61,38 @@ printf("[Done]: ");
 print_array(a + l, left_length + right_length);
 free(temp_left);
 free(temp_right);
+}
+/**
+ * merge_sort_recursion - and the right index r.
+ * This function implements the recursive
+ * divide-and-conquer step of the merge sort algorithm, splitting the array
+ * portion between l...r at the middle, and calling itself on each portion,
+ * before applying the function to merge the sorted portions of the array
+ * that will result.
+ * Applies the merge sort algorithm to the array a between the left index l
+ * @a: the array to sort
+ * @l: start index
+ * @r: end index
+ */
+
+void merge_sort_recursion(int a[], size_t l, size_t r)
+{
+/*we stop recursion when l >= r*/
+if (l < r)
+{
+/*find the midpoint of l and r */
+size_t m = l + (r - l) / 2;
+/* apply the function recursively to the left and right portions split */
+/*at the midpoint*/
+merge_sort_recursion(a, l, m);
+merge_sort_recursion(a, m + 1, r);
+
+/*at this point both portions of the array have been sorted, and we now*/
+/* merge the sorted portions of the array*/
+
+
+merge_sorted_arrays(a, l, m, r);
+}
 }
 
 /**
