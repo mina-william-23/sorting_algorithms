@@ -61,15 +61,14 @@ merge_sorted_arrays(a, l, m, r);
 void merge_sorted_arrays(int a[], size_t l, size_t m, size_t r)
 {
 /*calculate the length of the left and right portions of the array*/
+/*create temporary arrays to store these portions*/
+/* used as index/counter variables for the 3 arrays a, temp_left, temp_right*/
 size_t left_length = m - l + 1;
 size_t right_length = r - m;
-
-/*create temporary arrays to store these portions*/
-int temp_left[left_length];
-int temp_right[right_length];
-
-/* used as index/counter variables for the 3 arrays a, temp_left, temp_right*/
+int *temp_left = malloc(sizeof(int) * left_length);
+int *temp_right = malloc(sizeof(int) * right_length);
 size_t i, j, k;
+
 printf("Merging...\n");
 /*copy the left portion into the temp_left array*/
 for (i = 0; i < left_length; i++)
@@ -108,4 +107,6 @@ else
 }
 printf("[Done]: ");
 print_array(a + l, left_length + right_length);
+free(temp_left);
+free(temp_right);
 }
