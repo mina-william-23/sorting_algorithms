@@ -18,30 +18,38 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
 	if (end - start + 1 <= 1)
 		return;
 
-	pivot = array[start];
-	i = start + 1;
+	pivot = array[end];
+	i = start;
 	j = end;
 
-	while (1)
+	while (j - i + 1 > 1)
 	{
 		while (array[i] < pivot)
 			i++;
 		while (array[j] > pivot)
 			j--;
 
-		if (j <= i)
+
+		if (j + 1 == 0 || j <= i)
 		{
-			array[start] = array[j];
-			array[j] = pivot;
+			if (array[i] > pivot)
+			{
+				array[end] = array[i];
+				array[i] = pivot;
+				print_array(array, sz);
+			}
 			break;
 		}
-		temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
+		if (array[i] > array[j])
+		{
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+			print_array(array, sz);
+		}
 	}
-	print_array(array, sz);
-	quick_sort_recursion(array, start, j - 1, sz);
-	quick_sort_recursion(array, j + 1, end, sz);
+	quick_sort_recursion(array, start, i - 1, sz);
+	quick_sort_recursion(array, i, end, sz);
 }
 
 /**
