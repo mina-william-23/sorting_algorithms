@@ -49,7 +49,7 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
 		}
 	}
 	quick_sort_recursion(array, start, i - 1, sz);
-	quick_sort_recursion(array, i, end, sz);
+	quick_sort_recursion(array, i, end - 1, sz);
 }
 
 /**
