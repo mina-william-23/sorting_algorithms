@@ -38,6 +38,7 @@ void counting_sort(int *array, size_t size)
 			{
 				array[idx++] = cnt_idx;
 				printf("%s%lu", delim, idx);
+				delim = ", ";
 			}
 		}
 		else
