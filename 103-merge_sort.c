@@ -23,7 +23,6 @@ printf("Merging...\n");
 /*copy the left portion into the temp_left array*/
 for (i = l, k = 0; i <= r; i++, k++)
 copy_a[k] = a[i];
-print_array(copy_a, left_length + right_length);
 printf("[left]: ");
 print_array(copy_a, left_length);
 printf("[right]: ");
