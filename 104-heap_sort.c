@@ -11,8 +11,6 @@ void swap_ints(int *num1, int *num2)
 {
 	int temp;
 
-	if (!num1 || !num2)
-		return;
 	temp = *num1;
 	*num1 = *num2;
 	*num2 = temp;
