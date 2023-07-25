@@ -22,7 +22,7 @@ void counting_sort(int *array, size_t size)
 		if (array[idx] > mx)
 			mx = array[idx];
 	}
-	cnt_arr = malloc(sizeof(int) * mx + 1);
+	cnt_arr = malloc(sizeof(int) * (mx + 1));
 	if (!cnt_arr)
 		return;
 	for (cnt_idx = 0; cnt_idx <= (size_t)mx; cnt_idx++)
