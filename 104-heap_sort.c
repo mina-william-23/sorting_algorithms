@@ -65,7 +65,7 @@ void heap_sort(int *array, size_t size)
 		return;
 
 	/* build heap (nlog(n))*/
-	for (idx = size - 1; ; idx--)
+	for (idx = size / 2 - 1; ; idx--)
 	{
 		heapify(array, size, idx, size);
 		if (idx == 0)
