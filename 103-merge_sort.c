@@ -19,6 +19,7 @@ void merge_sorted_arrays(int a[], size_t l, size_t m, size_t r)
 	size_t right_length = r - m;
 	int *copy_a = malloc(sizeof(int) * (r - l + 1));
 	size_t i, j, k;
+
 	printf("Merging...\n");
 	/*copy the left portion into the temp_left array*/
 	for (i = l, k = 0; i <= r; i++, k++)
