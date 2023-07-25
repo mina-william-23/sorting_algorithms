@@ -47,4 +47,5 @@ void counting_sort(int *array, size_t size)
 		delim = ", ";
 	}
 	printf("\n");
+	free(cnt_arr);
 }
