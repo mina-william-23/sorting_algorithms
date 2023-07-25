@@ -62,20 +62,20 @@ free(copy_a);
 void merge_sort_recursion(int a[], size_t l, size_t r)
 {
 /*we stop recursion when l >= r*/
-if (l < r)
+if (r - l + 1 > 1)
 {
 /*find the midpoint of l and r */
-size_t m = l + (r - l) / 2;
+size_t m = l + (r - l + 1) / 2;
 /* apply the function recursively to the left and right portions split */
 /*at the midpoint*/
-merge_sort_recursion(a, l, m);
-merge_sort_recursion(a, m + 1, r);
+merge_sort_recursion(a, l, m - 1);
+merge_sort_recursion(a, m, r);
 
 /*at this point both portions of the array have been sorted, and we now*/
 /* merge the sorted portions of the array*/
 
 
-merge_sorted_arrays(a, l, m, r);
+merge_sorted_arrays(a, l, m - 1, r);
 }
 }
 
