@@ -73,12 +73,12 @@ void heap_sort(int *array, size_t size)
 	/* print_size_flag = size;*/
 	for (idx = size - 1; ; idx--)
 	{
-		/*if (array[0] != array[idx])*/
-		/*{*/
 		swap_ints(array, array + idx);
 		print_array(array, size);
-		heapify(array, idx, 0, size);
-		/*}*/
+		if (array[0] != array[idx])
+		{
+			heapify(array, idx, 0, size);
+		}
 		if (idx == 0)
 			break;
 	}
