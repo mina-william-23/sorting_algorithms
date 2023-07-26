@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
-
 /**
  * quick_sort_recursion - quick_sort_hoare implementation
  * hoare parition logic : use the first element as pivot and two pointers
@@ -34,13 +33,17 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
 
 		if (j + 1 == 0 || j <= i)
 			break;
-		if (array[i] > array[j])
-		{
-			temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
-			print_array(array, sz);
-		}
+
+		/* commented code optimize the algorithm*/
+		/* but doesn't match the requested print so i commented it*/
+
+		/* if (array[i] > array[j]) */
+		/* { */
+		temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+		print_array(array, sz);
+		/* } */
 	}
 	quick_sort_recursion(array, start, i - 1, sz);
 	quick_sort_recursion(array, i, end, sz);
@@ -58,3 +61,5 @@ void quick_sort_hoare(int *array, size_t size)
 
 	quick_sort_recursion(array, 0, size - 1, size);
 }
+
+/* gcc quick_sort.c my_main.c print_array.c -o quick */
