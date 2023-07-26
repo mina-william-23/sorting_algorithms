@@ -67,4 +67,5 @@ void counting_sort(int *a, size_t size)
 		a[idx] = b[idx];
 
 	free(cnt_arr);
+	free(b);
 }
