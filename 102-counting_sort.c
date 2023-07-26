@@ -43,7 +43,7 @@ void counting_sort(int *a, size_t size)
 
 	mx = get_max(a, size);
 
-	cnt_arr = malloc(sizeof(int) * mx + 1);
+	cnt_arr = malloc(sizeof(int) * (mx + 1));
 	if (!cnt_arr)
 	{
 		free(b);
