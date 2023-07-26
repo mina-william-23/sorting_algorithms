@@ -53,7 +53,7 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (!array || size < 2)
+	if (array == NULL || size < 2)
 		return;
 
 	quick_sort_recursion(array, 0, size - 1, size);
