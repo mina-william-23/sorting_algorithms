@@ -32,7 +32,7 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
 			j--;
 		} while (array[j] > pivot);
 
-		if (j + 1 == 0)
+		if (j + 1 == 0 || j <= i)
 			break;
 		if (array[i] > array[j])
 		{
