@@ -38,8 +38,6 @@ void counting_sort(int *a, size_t size)
 	b = malloc(sizeof(int) * size);
 	if (!b)
 		return;
-	for (idx = 0; idx < size; idx++)
-		b[idx] = a[idx];
 
 	mx = get_max(a, size);
 
