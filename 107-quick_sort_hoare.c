@@ -24,20 +24,14 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
 
 	while (j - i + 1 > 1)
 	{
-		do
-		{
+		do {
 			i++;
-		}
-		while (array[i] < pivot);
+		} while (array[i] < pivot);
 
-		do
-		{
+		do {
 			j--;
-		}
-		while (array[j] > pivot);
+		} while (array[j] > pivot);
 
-		if (j + 1 == 0 || j <= i)
-			break;
 		if (array[i] > array[j])
 		{
 			temp = array[i];
