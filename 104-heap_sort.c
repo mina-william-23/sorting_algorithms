@@ -42,7 +42,7 @@ void heapify(int *array, size_t size, size_t idx, size_t print_size)
 		mx_idx = child1_idx;
 	if (child2_idx < size && array[child2_idx] > array[mx_idx])
 		mx_idx = child2_idx;
-	if (mx_idx != parent_idx)
+	if (array[mx_idx] != array[parent_idx])
 	{
 		swap_ints(array + parent_idx, array + mx_idx);
 		print_array(array, print_size);
