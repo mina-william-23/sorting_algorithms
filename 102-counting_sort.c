@@ -27,7 +27,7 @@ int get_max(int *array, size_t size)
  * @array: array
  * @size: size
  */
-void counting_sort(int *array, size_t size)
+void counting_sort(int *a, size_t size)
 {
 	int *b, *cnt_arr, mx;
 	size_t idx, cnt_idx;
@@ -49,7 +49,7 @@ void counting_sort(int *array, size_t size)
 		free(b);
 		return;
 	}
-	for (cnt_idx = 0; cnt_idx <= mx; cnt_idx++)
+	for (cnt_idx = 0; cnt_idx <= (size_t) mx; cnt_idx++)
 		cnt_arr[cnt_idx] = 0;
 
 	for (idx = 0; idx < size; idx++)
@@ -59,7 +59,7 @@ void counting_sort(int *array, size_t size)
 		cnt_arr[cnt_idx] += cnt_arr[cnt_idx - 1];
 	print_array(cnt_arr, mx + 1);
 
-	for (idx = size - 1; idx >= 0; idx--)
+	for (idx = size - 1; ;idx--)
 	{
 		b[--cnt_arr[a[idx]]] = a[idx];
 		if (idx == 0)
