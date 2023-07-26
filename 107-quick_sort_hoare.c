@@ -21,7 +21,7 @@ void quick_sort_recursion(int *array, size_t start, size_t end, size_t sz)
 	i = start - 1;
 	j = end + 1;
 
-	while (j + 1 != 0 || j > i)
+	while (j > i)
 	{
 		do {
 			i++;
