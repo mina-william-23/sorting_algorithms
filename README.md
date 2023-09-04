@@ -104,3 +104,9 @@ Function Prototypes:
   - Always uses the last elemement of the partition being sorted as the pivot.
   - Prints the array after each swap.
   - [107-O](./107-O): Text file containing the best, average, and worst case time complexities of the Quick Sort Hoare Partition cheme algorithm, one per line.
+
+## Authors
+
+- **Mina Samir** => [MinaSamirSaad](https://github.com/MinaSamirSaad)
+
+- **Mina William** => [mina-william-23](https://github.com/mina-william-23)
