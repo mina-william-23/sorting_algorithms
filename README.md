@@ -3,19 +3,19 @@
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRztBz3thnxU2MZwqucC6GD-YnuzDLpXk9weg&usqp=CAU)
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE2x8GeiLD2O8kQMi_nu59o69xACZT2MhPuw&usqp=CAU)
 
-### General :sunflower
+### General
 
 - At least four different sorting algorithms
 - What is the Big O notation, and how to evaluate the time complexity of an algorithm
 - How to select the best sorting algorithm for a given input
 - What is a stable sorting algorithm
 
-## Helper Files :raised_hands
+## Helper Files
 
 - [print_array.c](./print_array.c): C function that prints an array of integers.
 - [print_list.c](./print_list.c): C function that prints a `listint_t` doubly-linked list.
 
-## Header Files :file_folder
+## Header Files
 
 - [sort.h](./sort.h): Header file containing definitions and prototypes for all types and functions written for the project.
 
@@ -46,7 +46,7 @@ Function Prototypes:
 | `105-radix_sort.c`         | `void radix_sort(int *array, size_t size);`       |
 | `107-quick_sort_hoare.c`   | `void quick_sort_hoare(int *array, size_t size);` |
 
-## Tasks :page_with_curl
+## Tasks
 
 - **0. Bubble sort**
   - [0-bubble_sort.c](./0-bubble_sort.c): C function that sorts an array of integers in ascending order using the Bubble Sort algorithm.
